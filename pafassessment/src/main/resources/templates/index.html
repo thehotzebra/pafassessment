@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Funds Transfer</h1>
+    
+    <form
+      action=#
+      data-th-action="@{/transfer}"
+      data-th-object="${fields}"
+      method="post"
+    >
+
+    <label for="user1">From account:</label>
+    <select name="user1" id="user1">
+        <option data-th-each="n : ${names}" data-th-value="${n}" data-th-text="${n}"></option>
+    </select>
+
+    <br><br>
+
+    <label for="user2">To account:</label>
+    <select name="user2" id="user2">
+        <option data-th-each="n : ${names}" data-th-value="${n}" data-th-text="${n}"></option>
+    </select>
+
+    <br><br>
+
+    <span>Amount:</span>
+        <input type="text" id="amount" name="amount" placeholder="Minimum Transaction is $10.">
+
+    <br><br>
+
+    <span>Comments:</span>
+        <textarea rows="2" cols="30" name="comment" id="comment" placeholder="Type here"></textarea>
+
+    <br><br>
+
+    <button type="button">Transfer</button>
+    </form>
+</body>
+</html>
